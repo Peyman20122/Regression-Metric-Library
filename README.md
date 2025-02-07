@@ -24,3 +24,8 @@ This code defines a **Custom Score** for evaluating a regression model, which is
 ✅ The output can be easily prepared as a report.
 
 🚀 **This method is useful for creating a standard library in machine learning!**
+
+## For example
+
+![image](https://github.com/user-attachments/assets/b3e7bc2b-6bb2-4fbb-9f0c-7d773a81e410)
+
