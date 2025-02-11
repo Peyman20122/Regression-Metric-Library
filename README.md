@@ -34,5 +34,6 @@ println("Final Score: ", metric(model_metrics))
 🔗 **#JuliaLang #MachineLearning #Regression #ModelEvaluation**  
 
 [@JuliaLang]([https://github.com/JuliaLang])
+
 [@Juliaorgir]([https://github.com/Juliair-org])
 
