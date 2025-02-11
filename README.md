@@ -1,31 +1,38 @@
 # Regression-Metric-Library
+### **🚀 Evaluating Regression Models with Julia!**  
 
-### ** What metric does this code calculate?**
-This code defines a **Custom Score** for evaluating a regression model, which is a combination of two metrics:
+🔎 **How can we evaluate a regression model with a single score?**  
+In this post, we implement a simple yet effective metric in **Julia** that combines **R² Score** and **MAPE** to generate an overall performance score for the model.  
 
-1. **\( R^2 \) (coefficient of determination)**
-- Indicates how much of the variance in the actual data the model explains.
-- The value is between **0 and 1** (the higher, the better).
+📌 **📜 Julia Code for Model Evaluation Metric:**  
+```julia
+struct MetricRegLearn
+    r2score::Float64
+    mape::Float64
+end
 
-2. **\( MAPE \) (Mean Absolute Percentage Error)**
-- Indicates the relative error of the model.
-- The value is between **0 and 1** (the lower, the better).
+function metric(m::MetricRegLearn)
+    final_score = ((1 - m.mape) + m.r2score) / 2 * 100
+    return final_score
+end
 
-### **Formula used in the code:**
+# Example usage:
+model_metrics = MetricRegLearn(0.92, 0.08)
+println("Final Score: ", metric(model_metrics))
+```
 
-![image](https://github.com/user-attachments/assets/3d3297e6-1dce-4252-ae7c-8d4f2f2125e5)
+📊 **Why is this metric useful?**  
+✅ Combines two widely used evaluation metrics  
+✅ Simple and efficient to compute  
+✅ Can be extended to include other metrics like **MAE, RMSE, RMSLE**  
 
-- The value **\( 1 - MAPE \)** is used to reverse the effect of MAPE, so that a lower value gives a better score.
-- Finally, the average of the two values ​​is taken and multiplied by 100 to give the output as a percentage.
+💡 **Ideas for improvement:**  
+🔹 Incorporating additional metrics such as **SMAPE and Adjusted R²**  
+🔹 Using **dynamic weighting** for each metric  
 
-### **Conclusion**
-✅ This class now calculates a metric.
-✅ It can be used to analyze various regression models.
-✅ The output can be easily prepared as a report.
+📢 **What metrics do you use for evaluating regression models? 🤔**  
+🔗 **#JuliaLang #MachineLearning #Regression #ModelEvaluation**  
 
-🚀 **This method is useful for creating a standard library in machine learning!**
-
-## For example
-
-![image](https://github.com/user-attachments/assets/b3e7bc2b-6bb2-4fbb-9f0c-7d773a81e410)
+[@JuliaLang]([https://github.com/JuliaLang])
+[@Juliaorgir]([https://github.com/Juliair-org])
 
